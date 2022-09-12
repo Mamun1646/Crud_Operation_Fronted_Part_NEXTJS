@@ -20,7 +20,6 @@ const App = () => {
       .catch((error) => console.log(error));
   };
 
-
   const [selecteduser, setSelectedUser] = useState({
     name: "",
     email: "",

@@ -5,7 +5,9 @@ export default function Home() {
     <div>
       <h1>Working Directory Path</h1>
       <Link href="#">
-      <h2><a>http://localhost:3000/users</a></h2>
+        <h2>
+          <a>http://localhost:3000/users</a>
+        </h2>
       </Link>
     </div>
   );

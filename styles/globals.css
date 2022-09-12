@@ -1,17 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    background-color: #161111;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+body {
+  background-color: #161111;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 a {
   color: inherit;
@@ -65,8 +63,6 @@ footer {
   color: white;
 }
 
-  
-  
 .users {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -77,7 +73,6 @@ footer {
   padding: 1rem;
   color: black;
 }
-
 
 .left {
   display: flex;

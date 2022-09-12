@@ -1,22 +1,19 @@
-import React, { useState,useEffect } from 'react';
-import PropTypes from 'prop-types';
-const NewUser = ({ onHandleAddUser,btnTxt,selecteduser}) => {
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+const NewUser = ({ onHandleAddUser, btnTxt, selecteduser }) => {
   const [user, setUser] = useState({
-    name: '',
-    email: ''
+    name: "",
+    email: "",
   });
-const {name,email}=user
+  const { name, email } = user;
 
   useEffect(() => {
     setUser({
-      name : selecteduser.name,
-      email : selecteduser.email
-    
-    }
-    )
-   
-  }, [selecteduser])
-  
+      name: selecteduser.name,
+      email: selecteduser.email,
+    });
+  }, [selecteduser]);
+
   const handleChange = (e) => {
     const fieldName = e.target.name;
     setUser((prevState) => {
@@ -28,8 +25,8 @@ const {name,email}=user
     e.preventDefault();
     onHandleAddUser(user);
     setUser({
-      name: '',
-      email: ''
+      name: "",
+      email: "",
     });
   };
   return (
@@ -56,19 +53,17 @@ const {name,email}=user
           required
         />
       </div>
-      <button type="submit"  >{btnTxt}</button>
+      <button type="submit">{btnTxt}</button>
     </form>
   );
 };
 
 NewUser.defaultProps = {
   onHandleAddUser: PropTypes.func,
-  selecteduser : {
-    name :"",
-    email:""
-  }
-
-  
+  selecteduser: {
+    name: "",
+    email: "",
+  },
 };
 
 export default NewUser;
