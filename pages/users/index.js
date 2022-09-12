@@ -3,8 +3,6 @@ import NewUser from "./NewUser";
 
 const url = "http://localhost:3005/";
 
-// const url = "https://rest-api-without-db.herokuapp.com/users";
-
 const App = () => {
   const [users, setUsers] = useState([]);
   const getAllUsers = () => {
@@ -22,7 +20,7 @@ const App = () => {
       .catch((error) => console.log(error));
   };
 
-  //update
+
   const [selecteduser, setSelectedUser] = useState({
     name: "",
     email: "",
@@ -30,9 +28,8 @@ const App = () => {
   const [updateFlag, setUpdateFlag] = useState(false);
   const [selectedUserID, setSelectedUserID] = useState("");
   const userEdit = (id) => {
-    
     setSelectedUserID(id);
-    console.log("=========", selectedUserID);
+    // console.log("=========", selectedUserID);
     setUpdateFlag(true);
     const filterData = users.filter((user) => user.id === id);
     setSelectedUser({
@@ -42,7 +39,6 @@ const App = () => {
   };
 
   const handleAddUser = (newUser) => {
-    
     fetch(url, {
       method: "POST",
       headers: {
@@ -59,7 +55,7 @@ const App = () => {
   }, []);
 
   const handleUpdate = (newUser) => {
-   console.log("======>",newUser)
+    // console.log("======>", newUser);
     fetch(url + `${selectedUserID}`, {
       method: "PATCH",
       headers: {
@@ -69,7 +65,7 @@ const App = () => {
     })
       .then(() => getAllUsers())
       .catch((error) => console.log(error));
-      setUpdateFlag(false)
+    setUpdateFlag(false);
   };
   return (
     <div>
